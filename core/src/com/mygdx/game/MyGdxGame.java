@@ -8,15 +8,11 @@ import com.badlogic.gdx.assets.AssetManager;
 
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import com.mygdx.game.component.PlayerComponent;
-import com.mygdx.game.component.PlayerSpriteAnimationComponent;
 import com.mygdx.game.script.PlayerScript;
 import com.mygdx.game.system.CameraSystem;
 import com.mygdx.game.system.PlayerAnimationSystem;
@@ -47,11 +43,11 @@ public class MyGdxGame extends ApplicationAdapter {
 				new ResourceManagerLoader(mAssetManager.getFileHandleResolver())
 		);
 
-		mAssetManager.load("project.dt", AsyncResourceManager.class);
+		mAssetManager.load(Constants.TITLE_RESOURCES_SCENE_FILE, AsyncResourceManager.class);
 
 		mAssetManager.finishLoading();
 
-		mAsyncResourceManager = mAssetManager.get("project.dt", AsyncResourceManager.class);
+		mAsyncResourceManager = mAssetManager.get(Constants.TITLE_RESOURCES_SCENE_FILE, AsyncResourceManager.class);
 		SceneConfiguration config = new SceneConfiguration();
 		config.setResourceRetriever(mAsyncResourceManager);
 
@@ -66,18 +62,17 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		//создание маппера игрока компонента
 		ComponentRetriever.addMapper(PlayerComponent.class);
-		ComponentRetriever.addMapper(PlayerSpriteAnimationComponent.class);
 
 		mCamera = new OrthographicCamera();
 		mViewport = new ExtendViewport(450, 450, mCamera);
 
-		mSceneLoader.loadScene("MainScene", mViewport);
+		mSceneLoader.loadScene(Constants.SCENE_TITLE_MAIN_SCENE, mViewport);
 
 		ItemWrapper root = new ItemWrapper(mSceneLoader.getRoot(), mEngine);
-		ItemWrapper player = root.getChild("player");
+		ItemWrapper player = root.getChild(Constants.PLAYER_NAME_SCENE);
 
 		//добавляем компонент анимации главного персонажа
-		ComponentRetriever.create(player.getChildEntity("player-anim"), PlayerComponent.class, mEngine);
+		ComponentRetriever.create(player.getChildEntity(Constants.PLAYER_NAME_ANIMATIONS), PlayerComponent.class, mEngine);
 
 		player.addScript(new PlayerScript());
 		cameraSystem.setFocus(player.getEntity());

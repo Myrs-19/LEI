@@ -11,15 +11,14 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.physics.box2d.Body;
 
 import com.mygdx.game.component.PlayerComponent;
-import com.mygdx.game.component.PlayerSpriteAnimationComponent;
 import games.rednblack.editor.renderer.components.ParentNodeComponent;
 
 import games.rednblack.editor.renderer.components.physics.PhysicsBodyComponent;
 
 import games.rednblack.editor.renderer.components.sprite.SpriteAnimationComponent;
 import games.rednblack.editor.renderer.components.sprite.SpriteAnimationStateComponent;
-import jdk.internal.org.jline.utils.OSUtils;
 
+import com.mygdx.game.Constants;
 
 //аннотация - обработка всех компонентов, чей класс является PlayerComponent
 @All(PlayerComponent.class)
@@ -53,7 +52,7 @@ public class PlayerAnimationSystem extends IteratingSystem {
         SpriteAnimationStateComponent spriteAnimationStateComponent = spriteStateMapper.get(entityId);
 
         //если текущая анимация cut и она завершилась, то переключаемся на дефолтную анимацию
-        if(spriteAnimationComponent.currentAnimation == "cut" &&
+        if(spriteAnimationComponent.currentAnimation == Constants.PLAYER_ANIMATION_NAME_CUT &&
                 spriteAnimationStateComponent.currentAnimation.isAnimationFinished(
                         spriteAnimationStateComponent.time
                 )
@@ -64,7 +63,7 @@ public class PlayerAnimationSystem extends IteratingSystem {
         //если нажата клавиша E
         if(Gdx.input.isKeyPressed(Input.Keys.E)){
             //устанавливаем текущую анимацию cut
-            spriteAnimationComponent.currentAnimation = "cut";
+            spriteAnimationComponent.currentAnimation = Constants.PLAYER_ANIMATION_NAME_CUT;
             //устанавливаем MODE анимации Normal - единождое выполнение
             spriteAnimationComponent.playMode = Animation.PlayMode.NORMAL;
         }
@@ -83,7 +82,7 @@ public class PlayerAnimationSystem extends IteratingSystem {
             SpriteAnimationComponent spriteAnimationComponent
             ){
 
-        spriteAnimationComponent.currentAnimation = "idle";
+        spriteAnimationComponent.currentAnimation = Constants.PLAYER_ANIMATION_NAME_IDLE;
         spriteAnimationComponent.playMode = Animation.PlayMode.LOOP;
     }
 }
