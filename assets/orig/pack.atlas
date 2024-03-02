@@ -1,0 +1,109 @@
+pack.png
+	size: 2048, 128
+	filter: Linear, Linear
+attack
+	index: 1
+	bounds: 1, 4, 100, 120
+player-anim
+	index: 1
+	bounds: 1, 4, 100, 120
+attack
+	index: 2
+	bounds: 103, 4, 100, 120
+player-anim
+	index: 2
+	bounds: 103, 4, 100, 120
+attack
+	index: 3
+	bounds: 205, 4, 100, 120
+player-anim
+	index: 3
+	bounds: 205, 4, 100, 120
+attack
+	index: 4
+	bounds: 307, 4, 100, 120
+player-anim
+	index: 4
+	bounds: 307, 4, 100, 120
+attack
+	index: 5
+	bounds: 409, 4, 100, 120
+player-anim
+	index: 5
+	bounds: 409, 4, 100, 120
+attack
+	index: 6
+	bounds: 511, 4, 100, 120
+player-anim
+	index: 6
+	bounds: 511, 4, 100, 120
+attack
+	index: 7
+	bounds: 613, 4, 100, 120
+player-anim
+	index: 7
+	bounds: 613, 4, 100, 120
+attack
+	index: 8
+	bounds: 715, 4, 100, 120
+player-anim
+	index: 8
+	bounds: 715, 4, 100, 120
+attack
+	index: 9
+	bounds: 817, 4, 100, 120
+player-anim
+	index: 9
+	bounds: 817, 4, 100, 120
+fur-tree
+	bounds: 1939, 31, 56, 93
+ground_green_land
+	bounds: 1997, 92, 32, 32
+ground_land
+	bounds: 1997, 58, 32, 32
+idel
+	index: 1
+	bounds: 919, 4, 100, 120
+player-anim
+	index: 10
+	bounds: 919, 4, 100, 120
+idel
+	index: 2
+	bounds: 1021, 4, 100, 120
+player-anim
+	index: 11
+	bounds: 1021, 4, 100, 120
+idel
+	index: 3
+	bounds: 1123, 4, 100, 120
+player-anim
+	index: 12
+	bounds: 1123, 4, 100, 120
+idel
+	index: 4
+	bounds: 1225, 4, 100, 120
+player-anim
+	index: 13
+	bounds: 1225, 4, 100, 120
+run
+	index: 1
+	bounds: 1327, 4, 100, 120
+run
+	index: 2
+	bounds: 1429, 4, 100, 120
+run
+	index: 3
+	bounds: 1531, 4, 100, 120
+run
+	index: 4
+	bounds: 1633, 4, 100, 120
+run
+	index: 5
+	bounds: 1735, 4, 100, 120
+run
+	index: 6
+	bounds: 1837, 4, 100, 120
+sun-flower
+	bounds: 1939, 19, 10, 10
+white-pixel
+	bounds: 1, 1, 1, 1
